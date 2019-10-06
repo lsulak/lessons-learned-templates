@@ -1,0 +1,91 @@
+image: ubuntu:18.04
+
+stages:
+  - lint
+  - unit
+  - integration
+
+variables:
+  PIP_CACHE_DIR: "$CI_PROJECT_DIR/pip-cache"
+  PIPENV_TIMEOUT: 900  # a bit overkill but it helps to reduce issues
+  LC_ALL: C.UTF-8
+  LANG: C.UTF-8
+
+cache:
+  paths:
+    - "$CI_PROJECT_DIR/pip-cache"
+  key: "$CI_PROJECT_ID"
+
+.ubuntu_before_script: &ubuntu_before_script
+  - apt-get update --assume-yes --quiet
+  - apt-get install --assume-yes --quiet python3 python3-pip zip python3-dev git-core
+
+  - pip3 install pipenv
+  - pipenv run python --version
+  - pipenv sync  # install packages exactly as they are in Pipfile.lock
+  - pipenv check
+
+black:
+  stage: lint
+  before_script: *ubuntu_before_script
+  script:
+    - pipenv install --dev
+    - pipenv run make black-ci
+
+coala:
+  stage: lint
+  image: coala/base
+  script:
+    - coala --ci
+
+flake8:
+  stage: lint
+  before_script: *ubuntu_before_script
+  script:
+    - pipenv install --dev
+    - pipenv run make flake8
+
+pylint:
+  stage: lint
+  before_script: *ubuntu_before_script
+  script:
+    - pipenv install --dev
+    - pipenv run make pylint
+
+readme_lint:
+  stage: lint
+  before_script: *ubuntu_before_script
+  script:
+    - apt-get install --assume-yes --quiet ruby ruby-dev
+    - gem install mdl
+    - pipenv run make readme-lint
+
+unit_tests:
+  stage: unit
+  before_script: *ubuntu_before_script
+  script:
+    - pipenv install --dev
+    - pipenv run make unit-tests
+    - zip -q -r coverage.zip coverage_html_report
+  coverage: '/TOTAL\s+.*\s+(\d+)%/'
+  artifacts:
+    paths:
+      - coverage.zip
+      - .coverage
+    expire_in: 1 day
+
+integration_tests:
+  stage: integration
+  services:
+    - postgres:11
+  before_script: *ubuntu_before_script
+  script:
+    - pipenv install --dev
+    - pipenv run make integration-tests
+    - zip -q -r coverage.zip coverage_html_report
+  coverage: '/TOTAL\s+.*\s+(\d+)%/'
+  artifacts:
+    paths:
+      - coverage.zip
+      - .coverage
+    expire_in: 1 day

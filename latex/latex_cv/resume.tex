@@ -1,0 +1,96 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+% Awesome CV LaTeX Template
+%
+% This template has been downloaded from:
+% https://github.com/posquit0/Awesome-CV
+%
+% Author:
+% Claud D. Park <posquit0.bj@gmail.com>
+% http://www.posquit0.com
+%
+% Template license:
+% CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)
+%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     Configuration
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Themes: Awesome-CV
+\documentclass[12pt, a4paper]{awesome-cv}
+
+%%% Override a directory location for fonts(default: 'fonts/')
+\fontdir[fonts/]
+
+%%% Configure a directory location for sections
+\newcommand*{\sectiondir}{resume/}
+
+%%% Override color
+% Awesome Colors: awesome-emerald, awesome-skyblue, awesome-red, awesome-pink, awesome-orange
+%                 awesome-nephritis, awesome-concrete, awesome-darknight
+%% Color for highlight
+% Define your custom color if you don't like awesome colors
+\colorlet{awesome}{awesome-skyblue}
+%\definecolor{awesome}{HTML}{CA63A8}
+%% Colors for text
+\definecolor{darktext}{HTML}{414141}
+\definecolor{text}{HTML}{000000}
+\definecolor{graytext}{HTML}{414141}
+\definecolor{lighttext}{HTML}{414141}
+
+%%% Override a separator for social informations in header(default: ' | ')
+%\headersocialsep[\quad\textbar\quad]
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     3rd party packages
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Needed to divide into several files
+\usepackage{import}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     Personal Data
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Essentials
+\name{Ladislav Šulák}{}
+\address{Kalinčiakovo 151, 934 01 Levice, Slovak Republic (currently living in Bristol, UK)}
+\mobile{(+421) 902 252 390} 
+%%% Social
+\email{laco.sulak@gmail.com}
+%\homepage{www.posquit0.com}
+\skype{Ladislav Sulak (live:bd8dacbe244c38f)}
+\github{lsulak}
+\linkedin{ladislav-sulak}
+
+%%% Optionals
+\position{Software Engineer{\enskip\cdotp\enskip}Python{\enskip\cdotp\enskip}Machine Learning{\enskip\cdotp\enskip}Database systems{\enskip\cdotp\enskip}Linux}
+%\quote{``Make the change that you want to see in the world."}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     Content
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Make a footer for CV with three arguments(<left>, <center>, <right>)
+%\makecvfooter
+%  {\today}
+%  {Ladislav Šulák~~~·~~~Résumé}
+%  {\thepage}
+
+\begin{document}
+%%% Make a header for CV with personal data
+\makecvheader
+
+%%% Import contents
+\import{\sectiondir}{summary.tex}
+\import{\sectiondir}{experience.tex}
+\import{\sectiondir}{education.tex}
+%\import{\sectiondir}{technical_skills.tex}
+%\import{\sectiondir}{extracurricular.tex}
+%\import{\sectiondir}{honors.tex}
+\import{\sectiondir}{publications.tex}
+\import{\sectiondir}{certificates.tex}
+\import{\sectiondir}{languages.tex}
+
+\end{document}

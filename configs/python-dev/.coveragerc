@@ -1,0 +1,40 @@
+# .coveragerc to control coverage.pyi
+[run]
+branch = True
+omit =
+    */site-packages/*
+    */dist-packages/*
+    */distutils/*
+    tests/*
+
+source = ./
+
+[report]
+# Regexes for lines to exclude from consideration
+exclude_lines =
+    # Have to re-enable the standard pragma
+    pragma: no cover
+
+    # Don't complain about missing debug-only code:
+    def __repr__
+    if self\.debug
+
+    # Don't complain if tests don't hit defensive assertion code:
+    raise AssertionError
+    raise NotImplementedError
+
+    # Don't complain if non-runnable code isn't run:
+    if 0:
+    if __name__ == .__main__.:
+
+# Don’t include files in the report that are 100% covered files.
+skip_covered = True
+
+ignore_errors = True
+
+show_missing = True
+
+fail_under = 70
+
+[html]
+directory = coverage_html_report

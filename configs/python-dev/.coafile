@@ -1,0 +1,4 @@
+[yaml-lint]
+bears = YAMLLintBear
+files = **.yml, **.yaml
+yamllint_config = .yamllint

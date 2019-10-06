@@ -1,0 +1,51 @@
+{
+    "child": {
+        "child1": {
+            "directory": "\/home\/lsulak\/PycharmProjects/",
+            "height": 1006,
+            "profile": "2b7c4080-0ddd-46c5-8f23-563fd3ba789d",
+            "readOnly": false,
+            "synchronizedInput": true,
+            "type": "Terminal",
+            "uuid": "e65a70b4-72d0-4cd3-a83f-6c5f3156c4ad",
+            "width": 519
+        },
+        "child2": {
+            "child1": {
+                "directory": "\/home\/lsulak",
+                "height": 502,
+                "profile": "6fe97fc5-c65e-4e6a-88d3-4daece190a4a",
+                "readOnly": false,
+                "synchronizedInput": true,
+                "type": "Terminal",
+                "uuid": "628ef11b-6ef9-4707-b02d-a108cd8b951e",
+                "width": 440
+            },
+            "child2": {
+                "directory": "\/home\/lsulak",
+                "height": 503,
+                "profile": "b92fa77c-f001-4ce1-87df-076da6a0065f",
+                "readOnly": false,
+                "synchronizedInput": true,
+                "type": "Terminal",
+                "uuid": "deeeb8e1-02df-4715-af2e-d55b765015ae",
+                "width": 440
+            },
+            "orientation": 1,
+            "position": 49,
+            "ratio": 0.499005964214711717,
+            "type": "Paned"
+        },
+        "orientation": 0,
+        "position": 54,
+        "ratio": 0.540625000000000022,
+        "type": "Paned"
+    },
+    "height": 1006,
+    "name": "Default",
+    "synchronizedInput": false,
+    "type": "Session",
+    "uuid": "a4c9b4c3-8ade-4186-b0f2-7f54d23e0d52",
+    "version": "1.0",
+    "width": 960
+}

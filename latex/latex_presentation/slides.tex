@@ -1,0 +1,147 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Author: Ladislav Sulak
+% Contact: xsulak04@stud.fit.vutbr.cz / laco.sulak@gmail.com
+% Date: 6/2015
+% Description: Beamer presentation scheme. Need to translate by LaTeX 3x
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[11pt,xcolor=pdflatex,dvipsnames,table]{beamer}
+
+
+%\usetheme{default}	 		% Empty white
+%\usetheme{Singapore}		% Empty white 2...gradient on top ########################
+%\usetheme{Goettingen}		% Almost like empty white with right panel
+%\usetheme{Hannover}		% Almost like empty white with left panel
+
+%\usetheme{AnnArbor} 		% Coloured, yellow white, nice #########
+
+%\usetheme{Bergen}	 		% Blue-white 1, huge left panel
+%\usetheme{Berkeley} 		% Blue-white 2, huge panel left and top
+\usetheme{Boadilla} 		% Blue-white 3, nice #########
+%\usetheme{Darmstadt}		% Blue-white 4, with black
+%\usetheme{Dresden}			% Blue-white 5, with silver
+
+%\usetheme{CambridgeUS} 	% Red IMS
+
+%\usetheme{Copenhagen}		% Simple, cool
+%\usetheme{Madrid}			% Simple, cool 2...bottom panel different ####### #################
+%\usetheme{Rochester}		% Simple, cool 3...wider
+%\usetheme{Warsaw}			% Simple, cool 3...gradient
+
+\usepackage[utf8]{inputenc}
+\usepackage[slovak]{babel}
+\usepackage[export]{adjustbox}
+\usepackage{graphics} % Images
+\usepackage{picture}
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+\usepackage{datetime}
+
+\bibliographystyle{plain}
+
+\usepackage{listings}
+
+\usepackage{color}
+
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+\definecolor{myorange}{RGB}{200,100,0}
+
+\lstset{ 
+  backgroundcolor=\color{white},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}; should come as last argument
+  basicstyle=\scriptsize\ttfamily,                % the size of the fonts that are used for the code
+  breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
+  breaklines=true,                 % sets automatic line breaking
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{mygreen},    % comment style
+  deletekeywords={...},            % if you want to delete keywords from the given language
+  escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+  frame=leftline,   	           % adds a frame around the code
+  inputencoding=utf8,
+  keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+  keywordstyle=\color{blue},       % keyword style
+  language=Python,                 % the language of the code
+  morekeywords={*,...},            % if you want to add more keywords to the set
+  numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
+  numbersep=5pt,                   % how far the line-numbers are from the code
+  numberstyle=\tiny\color{mygray}, % the style that is used for the line-numbers
+  rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+  showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+  showstringspaces=false,          % underline spaces within strings only
+  showtabs=false,                  % show tabs within strings adding particular underscores
+  stepnumber=1,                    % the step between two line-numbers. If it's 1, each line will be numbered
+  stringstyle=\color{myorange},    % string literal style
+  tabsize=2,	                   % sets default tabsize to 2 spaces
+  title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of title
+}
+
+\usepackage[font=scriptsize]{caption}
+
+\usepackage{array}
+\usepackage{verbatim, longtable}
+\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
+\usepackage{makecell}
+\renewcommand{\arraystretch}{1.45}
+\usepackage{diagbox}
+\usepackage{tabularx} 
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{caption}{\insertcaption} 
+\setbeamertemplate{caption label separator}{}
+
+\title[TODO Title in page]{TODO Main title}
+\subtitle{{\small TODO Secondary title}}
+\author[Ladislav Šulák]
+{
+	Ladislav Šulák \\
+	{\small laco.sulak@gmail.com} \\
+}
+\date[\today]{}
+\institute[TODO institute]
+
+\begin{document}
+
+	\begin{frame}
+		\titlepage
+	\end{frame}
+
+	\begin{frame}\frametitle{First slide}
+			Some text \cite{SLR1, SLR2}. \lstinputlisting[firstline=5,lastline=15]{src/abstract.py}
+	\end{frame}
+
+	\begin{frame}
+		\begin{itemize}\setlength\itemsep{.4em}
+			\item some text1
+			\item some text2.
+		\end{itemize}
+
+		\begin{center}
+			\begin{figure}[htbp]
+ 	 	  	\centering
+   	 		\includegraphics[width=0.5\textwidth]{fig/architectureNVTS.png}
+   	 		\caption{Some text.}
+    		\label{fig:architecture}
+			\end{figure}
+		\end{center}
+	
+	\end{frame}
+	
+
+	\begin{frame}\frametitle{TODO Result slide}
+	\begin{block}{TODO first block}
+		Text
+	\end{block}
+	
+	\begin{block}{Conclusion}
+		Some conclusion.
+	\end{block}
+
+	\end{frame}
+	
+	\begin{frame}\frametitle{References}
+		\fontsize{6.5pt}{7.2}\selectfont
+	    \bibliography{literature}
+	\end{frame}
+
+\end{document}
