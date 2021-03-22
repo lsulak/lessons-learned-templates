@@ -6,8 +6,11 @@ if [ -f /etc/bashrc ]; then
 fi
 
 # Aliases
-alias g="git"
-alias s="ssh"
+alias g="git "
+alias ga="git add "
+alias gb="git branch "
+alias gs="git status "
+alias s="ssh "
 alias la="ls -lAh --group-directories-first"
 
 # Archive extractor

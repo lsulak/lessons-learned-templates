@@ -19,7 +19,7 @@ flake8:
 
 PYLINT_FILES = `find . \
 		-path './docs' -prune -o \
-		-name '*.py' -print`; \
+		-name '*.py' -print`;
 
 pylint:
 	python3 -m pylint $(PYLINT_FILES)
